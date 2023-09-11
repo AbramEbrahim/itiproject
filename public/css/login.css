@@ -1,0 +1,116 @@
+
+
+
+h1 {
+  text-align: center;
+  color: rgb(0, 143, 151) ;
+} 
+h2 {
+  text-align: center;
+  color: rgb(146, 198, 198) ;
+} */
+/* 
+h3 {
+  text-align: center;
+  color: rgb(0, 114, 118) ;
+} */
+
+.anav:hover{
+  color: #005d81;
+  border-bottom: #00f49f 1px solid;
+  transition: 1s;
+}
+
+.b{
+  background-color: #000;
+  border-radius: 15px;
+  width: 60%;
+  margin-left: 20%;
+  height: 50px;
+  size: 300px;
+  color:rgb(179, 233, 243) ;
+  border-style:solid ;
+  border-color: #00f49f ;
+  
+  }
+
+.sign{
+  font-size: 22px;
+  width: 49%;
+  height: 45px;
+  border-radius: 15px;
+  border:#00f49f  1px solid;
+}
+
+
+  .b:hover , .sign:hover{
+  background-color:#00f49f ;
+  color: #000;
+  box-shadow: #8cdeff 2px 5px 21px ;
+  transition: 1s;
+  }
+  
+  .t{
+  background-color: rgb(255, 255, 255);
+  width: 80%;
+  height: 30px;
+  border-radius: 5px;
+  border: #00f49f  2px solid;
+  opacity: 1;
+  padding: 15px;
+  margin: 20px;
+  font-size: 16px;
+  }
+
+  .formm{
+    background-color: #ffffff;
+    font-size: 20px; 
+    width: 90%;
+    margin: 10px;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8%;
+    height: auto;
+    
+  }
+  
+  .sign:active{
+    background-color: #000;
+    color: #00f49f ;
+    box-shadow: #8cdeff 2px 5px 21px ;
+
+  }  
+  input:hover , input:focus{
+      border-style:solid ;
+      border-color:#7befc6 ;
+      background-color: #b0ffe3 ;
+      width: 85%;
+      transition: 1S;
+  }
+  
+  
+  .column {
+    display: grid;
+    float: left;
+    width: 50%;
+    padding: 20px;
+    height: 400px;  
+  }
+  
+  .right{
+  width: 35%;
+  }
+  
+  .left{
+  width: 60%;
+  }
+
+  @media screen and (max-width: 800px) {
+  .column {
+  width: 100%;
+  margin-left: 5%;
+  border-radius: 7px;
+  position: relative;
+  }
+  
+  }
