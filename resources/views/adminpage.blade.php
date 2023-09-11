@@ -16,13 +16,6 @@
 
 <body>
     
-    {{-- <a href="{{ route('product.create') }}">Add Product</a> --}}
-    
-    <form action="{{ route('product.create')}}" method="get">
-        <button>Add Product</button>
-    </form>
-    
-    {{-- <a href="{{ route('category.index') }}">Categories</a> --}}
     <table>
         <thead>
             <tr>
@@ -67,6 +60,9 @@
 
         </tbody>
     </table>
+
+    
+    <a href="{{ route('product.create')}}" ><button style="width: 20%; margin: 30px;  height: 40px; border-radius: 10px; background-color: rgb(0, 0, 0); color: white ">add product</button> </a>
 
 </body>
 
