@@ -14,9 +14,9 @@ if ($total==null) {
 
   @if (Session::has('signer'))
   <a href="myorders">orders</a>
+  <a href="profile">profile</a>
   @endif
 
-  <a href="#contact">profile</a>
 
   
   <div style=" position: relative ; float: left;">

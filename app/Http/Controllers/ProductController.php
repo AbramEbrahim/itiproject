@@ -140,17 +140,27 @@ class ProductController extends Controller
      * @param  \App\Http\Requests\StoreProductRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProductRequest $request)
-    {
-        $imagename= time(). '.' . $request->image->extension();
-        $request->image->move(public_path('imeges'),$imagename);
-        $data = $request->all();
-        $data['image']=$imagename;
-        Product::create($data);
-        return redirect('adminpage');
-    
-    }
 
+    
+    public function store(StoreProductRequest $request)
+        {
+            $defaultImage = 'images/default_product.png';
+        
+            $data = $request->except('_token', '_method');
+        
+            if (!empty($request->image)) {
+            $imagename = 'images/'.uniqid() . '.' . $request->image->extension();
+            $request->image->move(public_path('images'), $imagename);
+                $data['image'] = $imagename;
+
+            } else {
+                $data['image'] = $defaultImage;
+            }
+        
+            Product::create($data);
+        
+            return redirect('adminpage');
+        }
     /**
      * Display the specified resource.
      *
@@ -175,17 +185,22 @@ class ProductController extends Controller
         
         $product=Product::find($id);
         return view('product.update',compact('product'));
-
+        
     }
     function edit($id,Request $request)
     {
+        $defaultImage = 'images/default_product.png';
         $data=$request->except('_token','_mathod');
-        if ($request->hasFile('image')) 
+        if (!empty($request->image)) 
         {
-            $imagename= uniqid(). '.' . $request->image->extension();
-            $request->image->move(public_path('images',$imagename));
-            $data['image']=$imagename;
+            $imagename = 'images/'.uniqid() . '.' . $request->image->extension();
+            $request->image->move(public_path('images'), $imagename);
+            $data['image'] = $imagename;
         }
+        else {
+            $data['image'] = $defaultImage;
+        }
+        
         
         $product=Product::find($id);
         $oldimage=$product->image;
@@ -206,12 +221,12 @@ class ProductController extends Controller
     function destroy($id)
     {
         $product=Product::find($id);
-        $product->delete();
-        
-        if ($product->image != 'default.jpg') {
+        if ($product->image == 'default_product.png') {
             Product::delete(public_path('images/'.$product->image));
         }
+        $product->delete();
+        
         return redirect('adminpage');
-
+        
     }
 }

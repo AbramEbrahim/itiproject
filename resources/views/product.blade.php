@@ -5,7 +5,7 @@
 <div class="row">
   @foreach($products as $product)
   <div class="column">
-    <div class="card">
+    <div class="card" style="width: 70%; height: 500px" >
       <img src="{{$product['image']}}" alt="product" style="width:100%">
       <div class="container">
         <h2>{{$product['name']}}</h2>

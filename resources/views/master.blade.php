@@ -104,12 +104,14 @@ html {
   cursor: pointer;
   width: 80%;
   margin-left: 10%;
-  border-radius: 10px
+  border-radius: 10px;
+  transition: 1s;
 }
 
 .button:hover ,.serch_button:hover{
-  background-color: #000000;
+  background-color: #0dca00;
   transition: 1s;
+  
 }
 img{
   height: 300px;

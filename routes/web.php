@@ -35,6 +35,12 @@ Route::post('/products/store',[ProductController::class,'store'])->name('product
 // Route::resource('/category',CategoryController::class);
 // Route::post('/sign_in',[SignerController::class,'sign'])->name('signer.sign');
 
+
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
+
+
 Route::post('/sign_up',[SignerController::class,'store'])->name('signer.store');
 
 Route::get('/sign_up', function () {
